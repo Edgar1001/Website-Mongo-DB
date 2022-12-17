@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>EC website</title>
+
+  <script src="node_modules/mysql/index.js"></script>
+
+<style>
+    body {
+      background-color: black;
+      color: white;
+    }
+
+    h1 {
+    text-align: center;
+  }
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    background-color: #f1f1f1;
+    position: absolute; /* Position the menu in the middle of the screen */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  li a {
+    display: block;
+    color: #000;
+    padding: 8px 16px;
+    text-decoration: none;
+  }
+
+    /* Change the background color of the menu item when the mouse hovers over it */
+    li a:hover {
+    background-color: #555;
+    color: white;
+  }
+
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+form {
+  border: 3px solid #f1f1f1;
+  width: 15%;
+  margin: auto;
+}
+
+input[type=text], input[type=password] {
+  width: 90%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #4caf50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 90%;
+}
+</style>
+
+
+<style>
+    /* Style the images */
+    .corner-image {
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      transition: transform 0.2s;
+    }
+
+    /* Style the top left image */
+    #top-left {
+      top: 0;
+      left: 0;
+    }
+
+    /* Style the top right image */
+    #top-right {
+      top: 0;
+      right: 0;
+    }
+
+    /* Style the bottom left image */
+    #bottom-left {
+      bottom: 0;
+      left: 0;
+    }
+</style>
+
+
+
+
+<script>
+    // Get a reference to the images
+    var topLeft = document.getElementById("top-left");
+    var topRight = document.getElementById("top-right");
+    var bottomLeft = document.getElementById("bottom-left");
+  
+    // Add the hover effect for the top left image
+    topLeft.onmouseover = function() {
+      topLeft.src = "C:\Users\Edgar\Desktop\website\Engineering.jpg";
+      topLeft.style.transform = "scale(1.2)";
+    }
+    topLeft.onmouseout = function() {
+      topLeft.src = "C:\Users\Edgar\Desktop\website\Engineering.jpg";
+      topLeft.style.transform = "scale(1)";
+    }
+  
+    // Add the hover effect for the top right image
+    topRight.onmouseover = function() {
+      topRight.src = "C:\Users\Edgar\Desktop\website\Engineering.jpg";
+      topRight.style.transform = "scale(1.2)";
+    }
+    topRight.onmouseout = function() {
+      topRight.src = "C:\Users\Edgar\Desktop\website\Engineering.jpg";
+      topRight.style.transform = "scale(1)";
+    }
+  
+    // Add the hover effect for the bottom left image
+    bottomLeft.onmouseover = function() {
+      bottomLeft.src = "C:\Users\Edgar\Desktop\website\Engineering.jpg";
+      bottomLeft.style.transform = "scale(1.2)";
+    }
+    bottomLeft.onmouseout = function() {
+      bottomLeft.src = "C:\Users\Edgar\Desktop\website\Engineering.jpg";
+      bottomLeft.style.transform = "scale(1)";
+    }
+</script>
+
+
+  
+</head>
+
+
+<body>
+
+    <script>
+        window.alert("Welcome to our site!");
+      </script>
+
+    <h1>EC website</h1>
+
+    <script>
+        const MongoClient = require('mongodb').MongoClient;
+  
+        async function main() {
+          // Connect to the database
+          const client = await MongoClient.connect('mongodb://localhost:27017');
+  
+          // Create a new database
+          const db = client.db('mydatabase');
+  
+          // Create a new collection
+          await db.createCollection('mycollection');
+  
+          // Create three users
+          await db.createUser({
+            user: 'user1',
+            pwd: 'password1',
+            roles: ['readWrite']
+          });
+          await db.createUser({
+            user: 'user2',
+            pwd: 'password2',
+            roles: ['readWrite']
+          });
+          await db.createUser({
+            user: 'user3',
+            pwd: 'password3',
+            roles: ['readWrite']
+          });
+  
+          // Authenticate as user1
+          await db.authenticate('user1', 'password1');
+  
+          // Do something with the database
+          console.log('Authenticated as user1');
+  
+          // Close the connection
+          client.close();
+        }
+  
+        main();
+      </script>
+
+
+
+     <!-- Add the side bar menu -->
+    <ul>
+    <li><a href="http://www.as.com">Home</a></li>
+    <li><a href="http://www.euronews.com">About</a></li>
+    <li><a href="http://www.youtube.com">Contact</a></li>
+    </ul>
+
+    <form>
+        <label for="username">Username:</label><br>
+        <input type="text" id="username" name="username"><br>
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password"><br><br>
+        <input type="submit" value="Submit">
+    </form>
+
+
+     <!-- Display the top left image -->
+     <img src="C:\Users\Edgar\Desktop\website\Engineering.jpg" class="corner-image" id="top-left" alt="Top Left">
+
+     <!-- Display the top right image -->
+     <img src="C:\Users\Edgar\Desktop\website\Engineering.jpg" class="corner-image" id="top-right" alt="Top Right">
+ 
+     <!-- Display the bottom left image -->
+     <img src="C:\Users\Edgar\Desktop\website\Engineering.jpg" class="corner-image" id="bottom-left" alt="Bottom Left">
+
+</body>
+</html>
